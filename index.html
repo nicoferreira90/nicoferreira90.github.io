@@ -1,0 +1,234 @@
+<html>
+
+<head>
+
+    <title>My Portfolio</title>
+
+
+    <!-- Bootstrap CSS and JS CDNs -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        body {
+            color: #121212;
+            background-color: #ffffff;
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        .card {
+
+            border-radius: 0;
+        
+        }
+
+    </style>
+</head>
+<body>
+<div class="container-fluid" style="width: 75%; margin: 0 auto;" x-data="{ currentTab: 'about' }">
+
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark p-2" style="margin-bottom: 4%;">
+        <div class="col-4 ms-4">
+            <h2 class="m-2" style="color: white;">Nicolás Ferreira</h2>
+        </div>
+        <div class="col-8">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav" style="width: 100%; justify-content: space-around;">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" @click.prevent="currentTab = 'about'" style="color: white; font-size: 1.4rem;">About Me</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" @click.prevent="currentTab = 'stack'" style="color: white; font-size: 1.4rem;">My Stack</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" @click.prevent="currentTab = 'projects'" style="color: white; font-size: 1.4rem;">My Projects</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" @click.prevent="currentTab = 'contact'" style="color: white; font-size: 1.4rem;">Contact</a>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+        </nav>
+    
+    <div class="row my-2" x-show="currentTab === 'about'" x-cloak>
+        <div class="col-6" style="margin: 0 auto;">
+            <div style="position: relative; width: 100%; padding-top: 66.67%; /* 4:3 Aspect Ratio */">
+                <img src="imgs/me.png" class="img-fluid" alt="Placeholder Image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+            </div>
+
+        </div>
+        <div class="col-6">
+            <h1>Hello, I'm Nicolás</h1>
+            <p class="lead">I’m a self-taught web developer from Chile with a passion for building performant and scalable web applications. I started coding my first year of university more than 15 years ago, originally in Java (back in the JSP days), and more recently in Python and JavaScript. These days, I mostly build Django apps.</p>
+            <p class="lead">When I'm not coding, I enjoy spending quality time with my wife and cat, and reading Dostoevsky or the Django docs before bed.</p>
+        </div>
+    </div>
+
+    <div class="row my-2" x-show="currentTab === 'stack'" x-cloak>
+        <div class="col-6">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3 mt-5">
+                <!-- Card 1 -->
+                <div class="col" >
+                    <div class="card text-center" style="width: 125px; height: 75px;">
+                        <img src="imgs\python.png" class="card-img-top" alt="Logo 1" style="width: 75px; height: 75px; margin: auto;">
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col">
+                    <div class="card text-center" style="width: 125px; height: 75px;">
+                        <img src="imgs\JavaScript-logo.png" class="card-img-top" alt="Logo 2" style="width: 65px; height: 65px; margin: auto;">
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col">
+                    <div class="card text-center" style="width: 125px; height: 75px;">
+                        <img src="imgs\sql-logo.png" class="card-img-top" alt="Logo 3" style="width: 90px; height: 55px; margin: auto;">
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="col">
+                    <div class="card text-center" style="width: 125px; height: 75px;">
+                        <img src="imgs\postgres-logo.png" class="card-img-top" alt="Logo 4" style="width: 115px; height: 63px; margin: auto;">
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="col">
+                    <div class="card text-center" style="width: 125px; height: 75px;">
+                        <img src="imgs\django-logo.jpg" class="card-img-top" alt="Logo 5" style="width: 100px; height: 75px; margin: auto;">
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="col">
+                    <div class="card text-center" style="width: 125px; height: 75px;">
+                        <img src="imgs\django-rest.png" class="card-img-top" alt="Logo 6" style="width: 110px; height: 60px; margin: auto;">
+                    </div>
+                </div>
+                <!-- Card 7 -->
+                <div class="col">
+                    <div class="card text-center" style="width: 125px; height: 75px;">
+                        <img src="imgs\tailwind.png" class="card-img-top" alt="Logo 6" style="width: 110px; height: 40px; margin: auto;">
+                    </div>
+                </div>
+                <!-- Card 8 -->
+                <div class="col">
+                    <div class="card text-center" style="width: 125px; height: 75px;">
+                        <img src="imgs\wagtail.png" class="card-img-top" alt="Logo 6" style="width: 110px; height: 60px; margin: auto;">
+                    </div>
+                </div>
+                <!-- Card 9 -->
+                <div class="col">
+                    <div class="card text-center" style="width: 125px; height: 75px;">
+                        <img src="imgs\htmx.png" class="card-img-top" alt="Logo 6" style="width: 110px; height: 30px; margin: auto;">
+                    </div>
+                </div>
+                <!-- Card 10 -->
+                <div class="col">
+                    <div class="card text-center" style="width: 125px; height: 75px;">
+                        <img src="imgs\alpine.png" class="card-img-top" alt="Logo 6" style="width: 110px; height: 25px; margin: auto;">
+                    </div>
+                </div>
+                <!-- Card 11 -->
+                <div class="col">
+                    <div class="card text-center" style="width: 125px; height: 75px;">
+                        <img src="imgs\docker.png" class="card-img-top" alt="Logo 6" style="width: 110px; height: 50px; margin: auto;">
+                    </div>
+                </div>
+                <!-- Card 12 -->
+                <div class="col">
+                    <div class="card text-center" style="width: 125px; height: 75px;">
+                        <img src="imgs\git.png" class="card-img-top" alt="Logo 6" style="width: 110px; height: 65px; margin: auto;">
+                    </div>
+                </div>
+                <!-- Card 13 -->
+                <div class="col">
+                    <div class="card text-center" style="width: 125px; height: 75px;">
+                        <img src="imgs\pandas.png" class="card-img-top" alt="Logo 6" style="width: 110px; height: 38px; margin: auto;">
+                    </div>
+                </div>
+                <!-- Card 14 -->
+                <div class="col">
+                    <div class="card text-center" style="width: 125px; height: 75px;">
+                        <img src="imgs\mpl.png" class="card-img-top" alt="Logo 6" style="width: 110px; height: 50px; margin: auto;">
+                    </div>
+                </div>
+                <!-- Card 15 -->
+                <div class="col">
+                    <div class="card text-center" style="width: 125px; height: 75px;">
+                        <img src="imgs\seaborn-logo.png" class="card-img-top" alt="Logo 6" style="width: 110px; height: 30px; margin: auto;">
+                    </div>
+                </div>
+                <!-- Card 16 -->
+                <div class="col">
+                    <div class="card text-center" style="width: 125px; height: 75px;">
+                        <img src="imgs\plotly.png" class="card-img-top" alt="Logo 6" style="width: 110px; height: 55px; margin: auto;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <h1>My Skill Set</h1>
+            <p class="lead">I'm proficient at developing full-stack web applications using Django, modern CSS libraries and JavaScript, as well as building web APIs using Django REST Framework. 
+                I'm comfortable with raw SQL queries, and have experience doing query optimization in PostgreSQL. Additionally, I have a working knowledge of the main Python data science libraries as well as modern development tools such as Git and Docker.</p>
+            <p class="lead">Recently, I've been very interested in the integration of JavaScript libraries like HTMX and Alpine.js into Django templates, as an alternative to heavier frameworks like React. </p>
+        </div>
+    </div>
+
+    <div class="row my-2" x-show="currentTab === 'projects'" x-cloak>
+        <div class="col-6">
+            <h1 style="text-wrap: balance;">Currently I'm working on:</h1>
+            <p class="lead">I'm in the early stages of developing a data science visualization project focused on Chilean politics, using pandas, Matplotlib and Seaborn, along with Wagtail CMS. I will post more information here when the time comes.</p>
+            <img src="imgs\seaborn.png" class="img-fluid" alt="Placeholder Image">
+        </div>
+        <div class="col-6">
+            <h1 style="text-wrap: balance;">I also developed and maintain:</h1>
+            <p class="lead">In 2024 I developed 2 full-stack Django projects with HTMX and Alpine.js</p>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Betview // <a href="https://www.betview.net">www.betview.net</a></h5>
+                    <p class="card-text">A free-to-use sports bet tracker, with an inbuilt analytics engine.</p>
+                    <p style="margin-bottom: 0;"><a href="https://github.com/nicoferreira90/bet_tracker_orange">https://github.com/nicoferreira90/bet_tracker_orange</a></p>
+                </div>
+            </div>
+            
+            <!-- Second Card -->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">MyReadingList</h5>
+                    <p class="card-text">A simple Django app for managing a to-read list and tracking completed books with ratings. Originally started as a project to emulate the functionality of an SPA using only HTMX.</p>
+                    <p style="margin-bottom: 0;"><a href="https://github.com/nicoferreira90/reading_list_app">https://github.com/nicoferreira90/reading_list_app</a></p>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    <div class="row my-2" x-show="currentTab === 'contact'">
+        <div class="col-12">
+            <h1>Get in touch</h1>
+            <p class="lead mb-4">I'm always open to discussing new opportunities or collaborations. I'm generally happy to work on anything Python or Django related.</p>
+        
+        <p class="lead">Feel free to reach out to me through any of the following channels:</p>
+        
+        <div class="lead">
+            <ul class="list-unstyled">
+                <li><strong>Email:</strong> <a href="mailto:nicolasalfonsoferreira@gmail.com">nicolasalfonsoferreira@gmail.com</a></li>
+                <li><strong>GitHub:</strong> <a href="https://github.com/nicoferreira90" target="_blank" rel="noopener noreferrer">https://github.com/nicoferreira90</a></li>
+                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/nicol%C3%A1s-ferreira-763399343/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/nicol%C3%A1s-ferreira-763399343/</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    
+</div>
+
+
+</body>
+
+</html>
