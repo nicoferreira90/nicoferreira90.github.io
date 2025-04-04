@@ -31,51 +31,55 @@
 <div class="container-fluid" style="width: 75%; margin: 0 auto;" x-data="{ currentTab: 'about' }">
 
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark p-2" style="margin-bottom: 4%;">
-        <div class="col-4 ms-4">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <!-- Left side: Name -->
             <h2 class="m-2" style="color: white;">Nicolás Ferreira</h2>
-        </div>
-        <div class="col-8">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            
+            <!-- Right side: Navbar toggler and navbar items -->
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav" style="width: 100%; justify-content: space-around;">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" @click.prevent="currentTab = 'about'" style="color: white; font-size: 1.4rem;">About Me</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" @click.prevent="currentTab = 'stack'" style="color: white; font-size: 1.4rem;">My Stack</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" @click.prevent="currentTab = 'projects'" style="color: white; font-size: 1.4rem;">My Projects</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" @click.prevent="currentTab = 'contact'" style="color: white; font-size: 1.4rem;">Contact</a>
-                  </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" @click.prevent="currentTab = 'about'" style="color: white; font-size: 1.4rem;">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" @click.prevent="currentTab = 'stack'" style="color: white; font-size: 1.4rem;">My Stack</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" @click.prevent="currentTab = 'projects'" style="color: white; font-size: 1.4rem;">My Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" @click.prevent="currentTab = 'contact'" style="color: white; font-size: 1.4rem;">Contact</a>
+                    </li>
                 </ul>
-              </div>
             </div>
-        </nav>
+        </div>
+    </nav>
     
     <div class="row my-2" x-show="currentTab === 'about'" x-cloak>
-        <div class="col-6" style="margin: 0 auto;">
+        <!-- Left column: Image -->
+        <div class="col-12 col-md-6 mb-3">
             <div style="position: relative; width: 100%; padding-top: 66.67%; /* 4:3 Aspect Ratio */">
-                <img src="imgs/me.png" class="img-fluid" alt="Placeholder Image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                <img src="imgs/me.png" class="img-fluid" alt="Nicolás Ferreira" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
             </div>
-
         </div>
-        <div class="col-6">
+        <!-- Right column: Text and Blog Banner -->
+        <div class="col-12 col-md-6">
             <h1>Hello, I'm Nicolás</h1>
             <p class="lead">I’m a full stack web developer from Chile with a passion for building performant and scalable web applications. I started coding my first year of university more than 15 years ago, originally in Java (back in the JSP days), and more recently in Python and JavaScript. These days, I mostly build Django apps.</p>
             <p class="lead">Lately I've been writing a blog about my web development work called Django Horizons:</p>
-            <a href="https://django-horizons.fly.dev/"><img src="imgs\dh.png" alt="dh" style="width: 100%"></a>
+            <a href="https://django-horizons.fly.dev/">
+                <img src="imgs/dh.png" alt="Django Horizons" class="img-fluid">
+            </a>
         </div>
     </div>
 
     <div class="row my-2" x-show="currentTab === 'stack'" x-cloak>
         <div class="col-6">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-3 mt-5">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3 mt-5">
                 <!-- Card 1 -->
                 <div class="col" >
                     <div class="card text-center" style="width: 125px; height: 75px;">
